@@ -2,29 +2,43 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: whitesmoke;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
-      <Pane fx:id="colorPane" layoutX="14.0" layoutY="14.0" prefHeight="293.0" prefWidth="572.0" style="-fx-background-color: black;" />
-      <JFXButton fx:id="genButton" layoutX="454.0" layoutY="316.0" prefHeight="69.0" prefWidth="131.0" style="-fx-border-radius: 5; -fx-border-color: black;" text="GENERATE!">
+      <Pane fx:id="colorPane" layoutX="14.0" layoutY="14.0" prefHeight="293.0" prefWidth="572.0" style="-fx-background-color: white;" />
+      <JFXButton fx:id="genButton" focusTraversable="false" layoutX="454.0" layoutY="316.0" onAction="#pressedGenButton" prefHeight="69.0" prefWidth="131.0" style="-fx-border-radius: 5; -fx-border-color: black; -fx-background-color: white;" text="RANDOMIZE">
          <font>
-            <Font name="Cambria" size="20.0" />
+            <Font name="Cambria" size="18.0" />
          </font>
       </JFXButton>
-      <Label fx:id="rLabel" alignment="CENTER" layoutX="14.0" layoutY="316.0" prefHeight="69.0" prefWidth="131.0" text="R:">
+      <TextField fx:id="rField" alignment="CENTER_RIGHT" focusTraversable="false" layoutX="14.0" layoutY="316.0" prefHeight="69.0" prefWidth="131.0" stylesheets="@css/myField.css">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="gField" alignment="CENTER_RIGHT" focusTraversable="false" layoutX="157.0" layoutY="316.0" prefHeight="69.0" prefWidth="131.0" stylesheets="@css/myField.css">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font></TextField>
+      <TextField fx:id="bField" alignment="CENTER_RIGHT" focusTraversable="false" layoutX="300.0" layoutY="316.0" prefHeight="69.0" prefWidth="131.0" stylesheets="@css/myField.css">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font></TextField>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="315.0" prefHeight="69.0" prefWidth="37.0" text="R:">
          <font>
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="gLabel" alignment="CENTER" layoutX="145.0" layoutY="316.0" prefHeight="69.0" prefWidth="131.0" text="G:">
+      <Label alignment="CENTER" layoutX="157.0" layoutY="316.0" prefHeight="69.0" prefWidth="37.0" text="G:">
          <font>
             <Font name="Cambria" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="bLabel" alignment="CENTER" layoutX="276.0" layoutY="316.0" prefHeight="69.0" prefWidth="131.0" stylesheets="@css/label.css" text="B:">
+      <Label alignment="CENTER" layoutX="300.0" layoutY="315.0" prefHeight="69.0" prefWidth="37.0" text="B:">
          <font>
             <Font name="Cambria" size="20.0" />
          </font>
