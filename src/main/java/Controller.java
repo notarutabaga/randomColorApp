@@ -5,23 +5,23 @@
 
 import com.jfoenix.controls.JFXButton;
 import javafx.geometry.Insets;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
 public class Controller {
     public Pane colorPane;
-    public JFXButton genButton;
+    public Button genButton;
     public TextField rField;
     public TextField gField;
     public TextField bField;
+    public AnchorPane anchorPane;
 
     public void initialize() {
         changeText(255, 255, 255);
         changeColor(255, 255, 255);
+
         getColorValues();
     }
 
@@ -97,6 +97,10 @@ public class Controller {
 
         changeColor(r, g, b);
         changeText(r, g, b);
+
+        rField.setFocusTraversable(false);
+        gField.setFocusTraversable(false);
+        bField.setFocusTraversable(false);
     }
 
     public int random() {
@@ -113,5 +117,19 @@ public class Controller {
         Color color = Color.rgb(r, g, b);
         Background newBackground = new Background(new BackgroundFill(color, CornerRadii.EMPTY, Insets.EMPTY));
         colorPane.setBackground(newBackground);
+    }
+
+    public void turnOn() {
+        rField.setFocusTraversable(true);
+        gField.setFocusTraversable(true);
+        bField.setFocusTraversable(true);
+    }
+
+    public void turnOff() {
+        rField.setFocusTraversable(false);
+        gField.setFocusTraversable(false);
+        bField.setFocusTraversable(false);
+
+        anchorPane.requestFocus();
     }
 }

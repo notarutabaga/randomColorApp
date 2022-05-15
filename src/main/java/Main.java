@@ -22,7 +22,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
 
-        primaryStage.setTitle("GUI");
+        primaryStage.setTitle("Color Shuffle");
         primaryStage.setScene(new Scene(root));
         primaryStage.show(); // this always comes at the end of this method
     }
